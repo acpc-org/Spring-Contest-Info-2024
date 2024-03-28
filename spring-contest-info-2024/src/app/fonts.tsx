@@ -1,5 +1,16 @@
-import { Arvo  } from 'next/font/google'
+import { Arvo, Alef, Krona_One, Rowdies } from 'next/font/google'
 
 export const arvo = Arvo({
-  weight: [ '400', '700' ]
+  subsets: [ 'latin' ],
+  weight: [ '400', '700' ],
+})
+
+export const alef = Alef({
+  subsets: [ 'latin' ],
+  weight: [ '400', '700' ],
+})
+
+export const krona = Rowdies({
+  subsets: [ 'latin' ],
+  weight: [ '400' ],
 })

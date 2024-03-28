@@ -55,17 +55,14 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Header() {
   return (
-    <header className="w-full p-4 flex items-center justify-between sticky">
-        <div>
-            <img src="" alt=""></img>
-        </div>
-        <div>
+    <header className="w-full flex items-center justify-between sticky z-10">
+        <div className="">
             <NavigationMenu>
-                <NavigationMenuList>
-                    <NavigationMenuItem>
-                    <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                      <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                         <li className="row-span-3">
                             <NavigationMenuLink asChild>
                             <a
@@ -92,11 +89,11 @@ export default function Header() {
                         <ListItem href="/docs/primitives/typography" title="Typography">
                             Styles for headings, paragraphs, lists...etc
                         </ListItem>
-                        </ul>
-                    </NavigationMenuContent>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                    <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+                      </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                         {components.map((component) => (
@@ -110,16 +107,14 @@ export default function Header() {
                         ))}
                         </ul>
                     </NavigationMenuContent>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                    <Link href="/docs" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        Documentation
-                        </NavigationMenuLink>
-                    </Link>
-                    </NavigationMenuItem>
-                </NavigationMenuList>
+                </NavigationMenuItem>
+              </NavigationMenuList>
             </NavigationMenu>
+        </div>
+        <div>
+          <a className="glow py-2 px-4 rounded-lg hover:bg-red-950" href="/apply">
+            Apply
+          </a>
         </div>
     </header>
   );
