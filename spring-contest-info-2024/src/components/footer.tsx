@@ -28,7 +28,7 @@ const socials = [
 
 export default function Footer() {
     return (
-        <footer className="flex justify-between w-[100vw] p-8 border-t-[1px] bg-gradient-to-r from-slate-800 from-10% via-slate-950 via-30% to-slate-950 border-slate-500">
+        <footer className="flex justify-between w-[100vw] p-8 border-t-[1px] bg-gradient-to-r from-neutral-900 from-10% via-slate-950 via-30% to-slate-950 border-slate-500">
             <div className="flex flex-col gap-8">
                 <div className="flex items-center gap-2">
                     <p className="text-white">Made with</p>

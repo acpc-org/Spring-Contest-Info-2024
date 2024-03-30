@@ -100,7 +100,7 @@ export default function Home() {
           Here, <s className="text-slate-300">criminals</s> participants 
           work in groups of 3 to solve well-defined 
           problems by writing 
-          programs under time limits to test their algorithmic knowledge, programming 
+          programs in 5 hours to test their algorithmic knowledge, programming 
           skills, logical reasoning, and ability to perform under pressure. 
         </p>
         <p className="mb-8">
@@ -118,9 +118,9 @@ export default function Home() {
         <h2 id="overview" className="text-4xl font-bold uppercase" style={ rowdies.style }>
           Overview
         </h2>
-        <p>
-
-        </p>
+        <div>
+          
+        </div>
       </div>
       <div className="w-full">
         <h2 id="schedule" className="text-4xl font-bold uppercase" style={ rowdies.style } px-8>

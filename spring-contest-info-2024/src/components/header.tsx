@@ -71,26 +71,25 @@ function DropDownMenu() {
                     <NavigationMenuLink asChild>
                     <a
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                        href="/"
+                        href="/apply"
                     >
                         <Icons.logo className="h-6 w-6" />
                         <div className="mb-2 mt-4 text-lg font-medium">
-                        shadcn/ui
+                          Apply Now
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
-                        Beautifully designed components built with Radix UI and
-                        Tailwind CSS.
+                          Trouble is brewing...
                         </p>
                     </a>
                     </NavigationMenuLink>
                 </li>
-                <ListItem href="#overview" title="Overview">
+                <ListItem href="/#overview" title="Overview">
                   Details about the event
                 </ListItem>
-                <ListItem href="#schedule" title="Schedule">
+                <ListItem href="/#schedule" title="Schedule">
                   When things are happening
                 </ListItem>
-                <ListItem href="#prizes" title="Prizes">
+                <ListItem href="/#prizes" title="Prizes">
                   What you can win
                 </ListItem>
               </ul>
@@ -122,11 +121,11 @@ export default function Header() {
     <header className="w-full flex items-center justify-between fixed z-10 bg-[rgba(0,0,0,0.5)] backdrop-blur-lg p-4 border-b-[1px] border-slate-500">
         <div className="sm:hidden group hover:cursor-pointer hover:bg-slate-900 p-3 rounded-lg ">
           <HamburgerMenuIcon></HamburgerMenuIcon>
-          <div className="hidden sm:block group-hover:block group-hover:absolute group-hover:top-0 group-hover:left-0 ">
+          <div className="hidden sm:block group-hover:block group-hover:absolute group-hover:top-4 group-hover:left-2 bg-slate-950 rounded-lg">
             <DropDownMenu></DropDownMenu>
           </div>
         </div>
-        <div id="menu-items" className="hidden sm:block">
+        <div className="hidden sm:block">
           <DropDownMenu></DropDownMenu>
         </div>
         <div className="flex items-center gap-4">
