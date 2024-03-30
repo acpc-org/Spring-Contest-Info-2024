@@ -3,6 +3,12 @@
 import * as React from "react"
 import Link from "next/link"
  
+import Countdown from "./countdown"
+
+// icons
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+
+
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import {
@@ -55,8 +61,66 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Header() {
   return (
-    <header className="w-full flex items-center justify-between sticky z-10">
-        <div className="">
+    <header className="w-full flex items-center justify-between fixed z-10 bg-[rgba(0,0,0,0.5)] backdrop-blur-lg p-4 border-b-[1px] border-slate-500">
+        <div className="sm:hidden group hover:cursor-pointer hover:bg-slate-900 p-3 rounded-lg ">
+          <HamburgerMenuIcon></HamburgerMenuIcon>
+          <div className="hidden sm:block group-hover:block group-hover:absolute group-hover:top-0 group-hover:left-0 ">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                        <li className="row-span-3">
+                            <NavigationMenuLink asChild>
+                            <a
+                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                href="/"
+                            >
+                                <Icons.logo className="h-6 w-6" />
+                                <div className="mb-2 mt-4 text-lg font-medium">
+                                shadcn/ui
+                                </div>
+                                <p className="text-sm leading-tight text-muted-foreground">
+                                Beautifully designed components built with Radix UI and
+                                Tailwind CSS.
+                                </p>
+                            </a>
+                            </NavigationMenuLink>
+                        </li>
+                        <ListItem href="/docs" title="Introduction">
+                            Re-usable components built using Radix UI and Tailwind CSS.
+                        </ListItem>
+                        <ListItem href="/docs/installation" title="Installation">
+                            How to install dependencies and structure your app.
+                        </ListItem>
+                        <ListItem href="/docs/primitives/typography" title="Typography">
+                            Styles for headings, paragraphs, lists...etc
+                        </ListItem>
+                      </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {components.map((component) => (
+                            <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                            >
+                            {component.description}
+                            </ListItem>
+                        ))}
+                        </ul>
+                    </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+        </div>
+        <div id="menu-items" className="hidden sm:block">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -111,8 +175,9 @@ export default function Header() {
               </NavigationMenuList>
             </NavigationMenu>
         </div>
-        <div>
-          <a className="glow py-2 px-4 rounded-lg hover:bg-red-950" href="/apply">
+        <div className="flex items-center gap-4">
+          <Countdown></Countdown>
+          <a className="glow py-2 px-4 rounded-lg hover:bg-[rgba(44,53,76,0.5)]" href="/apply">
             Apply
           </a>
         </div>

@@ -43,17 +43,17 @@
 @keyframes blink {
   0% {
     box-shadow: 
-      0 0 2px #ebeff7, 
-      0 0 8px #ebeff7,
-      0 0 12px #ebeff7, 
-      0 0 8px #4e586b;
+      0 0 1px #ebeff7, 
+      0 0 6px #ebeff7,
+      0 0 8px #ebeff7, 
+      0 0 4px #4e586b;
   }
   100% {
     box-shadow: 
-      0 0 8px #fff, 
-      0 0 12px #fff,
-      0 0 16px #fff, 
-      0 0 8px #fff;
+      0 0 2px #fff, 
+      0 0 8px #fff,
+      0 0 10px #fff, 
+      0 0 4px #fff;
   }
 }
 
