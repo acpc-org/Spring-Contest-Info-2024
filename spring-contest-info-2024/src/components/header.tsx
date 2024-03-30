@@ -23,22 +23,22 @@ import {
  
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Tips",
+    href: "/tips",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Look this if you're struggling during the contest",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "FAQ",
+    href: "/#faq",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Frequently Asked Questions.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Sponsors",
+    href: "/#sponsors",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Yay thank you for the money.",
   },
   {
     title: "Scroll-area",
@@ -59,121 +59,75 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
+function DropDownMenu() {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Main Items</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                    <a
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                        href="/"
+                    >
+                        <Icons.logo className="h-6 w-6" />
+                        <div className="mb-2 mt-4 text-lg font-medium">
+                        shadcn/ui
+                        </div>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                        Beautifully designed components built with Radix UI and
+                        Tailwind CSS.
+                        </p>
+                    </a>
+                    </NavigationMenuLink>
+                </li>
+                <ListItem href="#overview" title="Overview">
+                  Details about the event
+                </ListItem>
+                <ListItem href="#schedule" title="Schedule">
+                  When things are happening
+                </ListItem>
+                <ListItem href="#prizes" title="Prizes">
+                  What you can win
+                </ListItem>
+              </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Extras</NavigationMenuTrigger>
+            <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                {components.map((component) => (
+                    <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                    >
+                    {component.description}
+                    </ListItem>
+                ))}
+                </ul>
+            </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  )
+}
+
 export default function Header() {
   return (
     <header className="w-full flex items-center justify-between fixed z-10 bg-[rgba(0,0,0,0.5)] backdrop-blur-lg p-4 border-b-[1px] border-slate-500">
         <div className="sm:hidden group hover:cursor-pointer hover:bg-slate-900 p-3 rounded-lg ">
           <HamburgerMenuIcon></HamburgerMenuIcon>
           <div className="hidden sm:block group-hover:block group-hover:absolute group-hover:top-0 group-hover:left-0 ">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        <li className="row-span-3">
-                            <NavigationMenuLink asChild>
-                            <a
-                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                href="/"
-                            >
-                                <Icons.logo className="h-6 w-6" />
-                                <div className="mb-2 mt-4 text-lg font-medium">
-                                shadcn/ui
-                                </div>
-                                <p className="text-sm leading-tight text-muted-foreground">
-                                Beautifully designed components built with Radix UI and
-                                Tailwind CSS.
-                                </p>
-                            </a>
-                            </NavigationMenuLink>
-                        </li>
-                        <ListItem href="/docs" title="Introduction">
-                            Re-usable components built using Radix UI and Tailwind CSS.
-                        </ListItem>
-                        <ListItem href="/docs/installation" title="Installation">
-                            How to install dependencies and structure your app.
-                        </ListItem>
-                        <ListItem href="/docs/primitives/typography" title="Typography">
-                            Styles for headings, paragraphs, lists...etc
-                        </ListItem>
-                      </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {components.map((component) => (
-                            <ListItem
-                            key={component.title}
-                            title={component.title}
-                            href={component.href}
-                            >
-                            {component.description}
-                            </ListItem>
-                        ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <DropDownMenu></DropDownMenu>
           </div>
         </div>
         <div id="menu-items" className="hidden sm:block">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        <li className="row-span-3">
-                            <NavigationMenuLink asChild>
-                            <a
-                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                href="/"
-                            >
-                                <Icons.logo className="h-6 w-6" />
-                                <div className="mb-2 mt-4 text-lg font-medium">
-                                shadcn/ui
-                                </div>
-                                <p className="text-sm leading-tight text-muted-foreground">
-                                Beautifully designed components built with Radix UI and
-                                Tailwind CSS.
-                                </p>
-                            </a>
-                            </NavigationMenuLink>
-                        </li>
-                        <ListItem href="/docs" title="Introduction">
-                            Re-usable components built using Radix UI and Tailwind CSS.
-                        </ListItem>
-                        <ListItem href="/docs/installation" title="Installation">
-                            How to install dependencies and structure your app.
-                        </ListItem>
-                        <ListItem href="/docs/primitives/typography" title="Typography">
-                            Styles for headings, paragraphs, lists...etc
-                        </ListItem>
-                      </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {components.map((component) => (
-                            <ListItem
-                            key={component.title}
-                            title={component.title}
-                            href={component.href}
-                            >
-                            {component.description}
-                            </ListItem>
-                        ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+          <DropDownMenu></DropDownMenu>
         </div>
         <div className="flex items-center gap-4">
           <Countdown></Countdown>

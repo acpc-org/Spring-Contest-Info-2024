@@ -38,6 +38,7 @@ export default function Countdown() {
 
         var formattedCountDownText = countDownText.replace("day", ":").replace("hour", ":").replace("minute", ":").replace("second", "");
         formattedCountDownText = formattedCountDownText.replace(/[^\d:]/g, '');
+        formattedCountDownText = (formattedCountDownText.slice(-1) == ':') ? formattedCountDownText + '0' : formattedCountDownText;
         setFormattedCountDown(formattedCountDownText);
       }
 

@@ -1,9 +1,12 @@
 import Image from "next/image";
 
+// fonts
+import { rowdies } from "../fonts";
+
 export default function Tips() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1> 
+      <h1 className="text-4xl font-bold uppercase" style={ rowdies.style }> 
         ACPC Programming Contest Tips
       </h1>
       <div>
