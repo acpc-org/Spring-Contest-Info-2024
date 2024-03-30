@@ -10,7 +10,7 @@ export const alef = Alef({
   weight: [ '400', '700' ],
 })
 
-export const krona = Rowdies({
+export const rowdies = Rowdies({
   subsets: [ 'latin' ],
   weight: [ '400' ],
 })
