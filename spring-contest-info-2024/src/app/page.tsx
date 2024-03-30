@@ -185,17 +185,27 @@ export default function Home() {
           </div>
           <div className="flex-grow flex flex-wrap gap-4 duration-200">
             <div className="flex-grow flex items-center justify-center border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-600 duration-500">
-              <div>
-                <div className="text-2xl font-bold flex items-center gap-2">
-                  <ClockIcon></ClockIcon>              
-                  <p>
-                    April 14th
-                  </p>
-                </div>
-                <p className="text-lg">
-                  1:00 PM - 6:00 PM
-                </p>
-              </div>    
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div>
+                      <div className="text-2xl font-bold flex items-center gap-2">
+                        <ClockIcon></ClockIcon>              
+                        <p>
+                          April 14th
+                        </p>
+                      </div>
+                      <p className="text-lg">
+                        1:00 PM - 6:00 PM
+                      </p>
+                    </div> 
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <a href="/#schedule">See Schedule</a>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+                 
             </div>
             <div className="flex-grow flex items-center justify-center border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-500 duration-500">
               <div>
@@ -213,14 +223,27 @@ export default function Home() {
             <div className="flex-grow flex items-center justify-center text-lg font-bold border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-800 duration-500">
               All Majors and Classifications welcome
             </div>
-            <div className="flex-grow border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-600 duration-500">
-              <p className="text-4xl font-bold">
-                $2000+ in Prizes
-              </p>
-              <p className="text-md">
-                also free food, glory, and chance to compete at ICPC World Finals
-              </p>
-            </div>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                <div className="flex-grow flex items-center justify-center h-full border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-600 duration-500">
+                  <div className="flex flex-col gap-2">
+                    <p className="text-4xl font-bold">
+                      $2000+ in Prizes
+                    </p>
+                    <p className="text-md">
+                      also free food, glory, and chance to compete at ICPC World Finals
+                    </p>
+                  </div>
+                </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <a href="/#schedule">See Prizes</a>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+                 
             <div className="flex-grow border-[1px] p-4 rounded-lg hover:bg-slate-700 duration-500">
               <p className="text-lg font-bold mb-8">C++, Java, Python, and more allowed</p>
               <Allowed items={allowedLanguages} 
