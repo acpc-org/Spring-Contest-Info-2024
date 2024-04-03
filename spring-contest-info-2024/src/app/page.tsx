@@ -213,7 +213,7 @@ export default function Home() {
           <Magnifier src="/dead_pineapple.png"
             magnifierHeight={100} magnifierWidth={100} zoomLevel={2} />
         </div>
-        <p className="italic">Trouble's brewing at Spring Contest 2024… Sign up and help us figure out what's going on!</p>
+        <p className="italic">Trouble&rsquo;s brewing at Spring Contest 2024… Sign up and help us figure out what&rsquo;s going on!</p>
       </div>
       <div className="w-full border-gray-700 border-[1px] rounded-lg p-8 hover:bg-black duration-500">
         <h2 id="what" className="text-4xl font-bold uppercase mb-4" style={ rowdies.style }>
@@ -223,7 +223,7 @@ export default function Home() {
           Welcome to 
           the <a href="https://tamuacpc.com/about" target="_blank" rel="noopener noreferrer" className="underline decoration-dashed hover:decoration-solid ">
             Aggie Competitive Programming Club
-          </a>'s 
+          </a>&rsquo;s 
           Spring <s className="text-slate-300">underground crime ring</s> competitive 
           programming contest!
           Here, <s className="text-slate-300">criminals</s> participants 

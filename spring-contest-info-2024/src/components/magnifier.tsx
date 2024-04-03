@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface MagnifierProps {
@@ -25,8 +26,10 @@ export default function Magnifier({
     const [showMagnifier, setShowMagnifier] = useState(false);
     return (
       <div className="h-[height] w-[width] relative">
-        <img
+        <Image
           src={src}
+          height={500}
+          width={500}
           style={{ height: height, width: width }}
           onMouseEnter={(e) => {
             // update image size and turn-on magnifier

@@ -17,18 +17,18 @@ export default function Tips() {
         <div>
           <h2 className="text-4xl font-bold uppercase">Getting Time Limit Exceeded?</h2>
 
-          <p>If you're using Python, make sure you select PyPy 2 or 3 and not Python 2 or 3.</p>
+          <p>If you&rsquo;re using Python, make sure you select PyPy 2 or 3 and not Python 2 or 3.</p>
 
           <p>
-              If you're already doing this, it is likely that your algorithm is too slow 
-              (but make sure you don't just have an infinite loop!). To avoid this, one can 
+              If you&rsquo;re already doing this, it is likely that your algorithm is too slow 
+              (but make sure you don&rsquo;t just have an infinite loop!). To avoid this, one can 
               do a quick mental calculation to get an idea of whether or not an algorithm is 
               worth coding.
           </p>
           <p>
               The general rule of thumb is that you can do approximately 108 operations in a second. 
               So if the time limit is 1 second, your algorithm is O(n2), and n=105, you would need 
-              about (105)2 / 108 = 100 seconds to run this code, so it's obvious that you shouldn't
+              about (105)2 / 108 = 100 seconds to run this code, so it&rsquo;s obvious that you shouldn&rsquo;t
               spend time typing it, and instead must find a more efficient solution. 
               On the other hand, if your algorithm is O(n log n), you will have about 
               20 * 105 = 2 * 106 operations, which should pass within the 1 second of time

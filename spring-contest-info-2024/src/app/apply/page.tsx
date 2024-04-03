@@ -38,13 +38,13 @@ export default function Apply() {
                     </p>
                     <p className="mt-4 font-bold">To do this:</p>
                     <ol className="list-decimal ml-4"> 
-                        <li>Make sure you know everyone's handle</li>
+                        <li>Make sure you know everyone&rsquo;s handle</li>
                         <li>Navigate to the “teams” tab on the my profile page of Codeforces</li>
                         <li>Click “Create new team”</li> 
-                        <li>From there, you should be able to follow the prompts, create a team name, and then add your teammates' handles there by clicking “Invite user”.</li>
+                        <li>From there, you should be able to follow the prompts, create a team name, and then add your teammates&rsquo; handles there by clicking “Invite user”.</li>
                     </ol>
                     <p className="italic mt-4">
-                        Note: If you don't have a team decided yet, you can still sign up and make the team
+                        Note: If you don&rsquo;t have a team decided yet, you can still sign up and make the team
                         later. Just make sure you have a Codeforces account and have signed up for the contest.
                     </p>
                 </li>
