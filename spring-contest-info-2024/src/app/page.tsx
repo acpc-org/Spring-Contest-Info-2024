@@ -430,10 +430,10 @@ export default function Home() {
         </h2>
         <div className="flex items-center gap-8 justify-between">
           {sponsors.map((sponsor, index) => (
-            <TooltipProvider>
+            <TooltipProvider key={"sponsor" + index}>
             <Tooltip>
               <TooltipTrigger>
-                <a href={sponsor.link} key={"sponsor" + index} className="flex items-center gap-4 hover:scale-[1.1] duration-200">
+                <a href={sponsor.link} className="flex items-center gap-4 hover:scale-[1.1] duration-200">
                   <Image src={sponsor.logo} alt={sponsor.name} width={100} height={100}></Image>
                 </a>
               </TooltipTrigger>
