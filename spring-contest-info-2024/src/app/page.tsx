@@ -1,10 +1,11 @@
 import Image from "next/image";
 
 // components
-import Header from './../components/header'
-import Magnifier from "./../components/magnifier";
+import Header from '@/components/header'
+import Magnifier from "@/components/magnifier";
 import Allowed from "@/components/allowed";
-import Footer from "./../components/footer";
+import PrizeItem from "@/components/prizeItem";
+import Footer from "@/components/footer";
 import {
   Tooltip,
   TooltipContent,
@@ -16,7 +17,7 @@ import {
 import { rowdies } from "./fonts";
 
 // icons
-import { SewingPinFilledIcon, ClockIcon, FaceIcon, } from '@radix-ui/react-icons'
+import { RxSewingPinFilled, RxClock, RxFace } from "react-icons/rx";
 
 // lists
 const schedule = [
@@ -114,6 +115,81 @@ const allowedLanguages = [
 ];
 
 
+const mainPrizes = [
+  { 
+    item: "Airpods Pro",
+    description: "Apple AirPods Pro (2nd Generation) Wireless Ear Buds with USB-C Charging, Up to 2X More Active Noise Cancelling Bluetooth Headphones, Transparency Mode, Adaptive Audio, with Personalized Spatial Audio.",
+    pic: "/airpods_pro.png",
+  },
+  {
+    item: "Razer Gaming Keyboard",
+    description: "Razer Huntsman Mini 60% Gaming Keyboard; Fast Keyboard Switches, Clicky Optical Switches, Chroma RGB Lighting, PBT Keycaps, Onboard Memory, in Classic Black.",
+    pic: "/razer_gaming_keyboard.png",
+  },
+  {
+    item: "HyperX Gaming Mouse",
+    description: "The HyperX Pulsefire Haste; Ultra Lightweight, 62g, 100 Hour Battery Life, 2.4Ghz Wireless, Honeycomb Shell, Hex Design, Up to 16000 DPI, 6 Programmable Buttons, in White.",
+    pic: "/hyperx_gaming_mouse.png",
+  },
+]
+
+const classificationPrizes = [
+  { 
+    item: "Mechanical Keyboard",
+    description: "AJAZZ KA820 75% Wired RGB Hot Swap Mechanical Keyboard; with Volume Knob, Poron Foam Gasket Mounted, South Facing LED, OME Profile PBT Keycap, and Custom Linear Switch.", 
+    pic: "/mechanical_keyboard.png",
+  },
+  {
+    item: "Laptop Stand",
+    description: "A laptop stand is a device that holds a laptop in a raised position, allowing the user to view the screen at eye level. This can help reduce neck strain and improve posture.",
+    pic: "/laptop_stand.png",
+  },
+  {
+    item: "Echo Dot",
+    description: "Amazon Echo Dot (5th Gen); has Clock, Compact smart speaker with Alexa, and enhanced LED display for at-a-glance clock, timers, weather and more, all in Glacier White ",
+    pic: "/echo_dot.png",
+  },
+  {
+    item: "Bluetooth Speaker",
+    description: "Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound, Bluetooth 5, Bassup, IPX7 Waterproof, 24-Hour Playtime, and Wireless Stereo Pairing. A speaker for your home, the outdoors, and travel.",
+    pic: "/bluetooth_speaker.png",
+  },
+  {
+    item: "Portable Chargers",
+    description: "Anker Magnetic Portable Charger, 5,000mAh Wireless Portable Charger with USB-C Cable, Battery Pack Only Compatible with iPhone 15/15 Plus/15 Pro/15 Pro Max, iPhone 14/13/12 Series and more.",
+    pic: "/portable_charger.png",
+  },
+]
+
+const mysteryPrizes = [
+  { 
+    item: "???",
+    description: "?????", 
+    pic: "/unknown_prize.png",
+  },
+  { 
+    item: "???",
+    description: "?????", 
+    pic: "/unknown_prize.png",
+  },
+  { 
+    item: "???",
+    description: "?????", 
+    pic: "/unknown_prize.png",
+  },
+  { 
+    item: "???",
+    description: "?????", 
+    pic: "/unknown_prize.png",
+  },
+  { 
+    item: "???",
+    description: "?????", 
+    pic: "/unknown_prize.png",
+  },
+]
+
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-y-20 px-4 sm:px-12 bg-gray-950">
@@ -124,13 +200,13 @@ export default function Home() {
         </h1>
         <div className="flex items-center gap-4">
           <div className="text-xs sm:text-sm border-white border-[1px] rounded-3xl py-1 px-2 flex-grow flex items-center gap-0 sm:gap-2">
-            <ClockIcon></ClockIcon><p>April 14th - 1:00 PM</p>
+            <RxClock></RxClock><p>April 14th - 1:00 PM</p>
           </div>
           <div className="text-xs sm:text-sm border-white border-[1px] rounded-3xl py-1 px-2 flex-grow flex items-center gap-0 sm:gap-2">
-            <SewingPinFilledIcon></SewingPinFilledIcon><p>PETR 118</p>
+            <RxSewingPinFilled></RxSewingPinFilled><p>PETR 118</p>
           </div>
           <div className="text-xs sm:text-sm border-white border-[1px] rounded-3xl py-1 px-2 flex-grow flex items-center gap-0 sm:gap-2">
-            <FaceIcon></FaceIcon><p>Food + Prizes</p>
+            <RxFace></RxFace><p>Food + Prizes</p>
           </div>
         </div>
         <div className="z-[0]">
@@ -171,8 +247,8 @@ export default function Home() {
         <h2 id="overview" className="text-4xl font-bold uppercase" style={ rowdies.style }>
           Overview
         </h2>
-        <p>
-
+        <p className="mt-4 mb-8">
+          Open to all majors and classifications, (almost) any language, and any level of experience.
         </p>
         <div className="mt-4 flex flex-col sm:flex-row gap-4">
           <div className="flex flex-col items-center justify-center gap-2 border-[1px] p-8 rounded-lg hover:px-10 hover:bg-slate-800 duration-500">
@@ -184,13 +260,13 @@ export default function Home() {
             </p>
           </div>
           <div className="flex-grow flex flex-wrap gap-4 duration-200">
-            <div className="flex-grow flex items-center justify-center border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-600 duration-500">
+            <div className="flex-grow flex items-center justify-center border-[1px] p-4 rounded-lg hover:scale-[1.025] hover:bg-slate-600 duration-500">
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
                     <div>
                       <div className="text-2xl font-bold flex items-center gap-2">
-                        <ClockIcon></ClockIcon>              
+                        <RxClock></RxClock>              
                         <p>
                           April 14th
                         </p>
@@ -207,10 +283,10 @@ export default function Home() {
               </TooltipProvider>
                  
             </div>
-            <div className="flex-grow flex items-center justify-center border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-500 duration-500">
+            <div className="flex-grow flex items-center justify-center border-[1px] p-4 rounded-lg hover:scale-[1.025] hover:bg-slate-500 duration-500">
               <div>
                 <div className="text-2xl font-bold flex items-center gap-2">
-                  <SewingPinFilledIcon></SewingPinFilledIcon>              
+                  <RxSewingPinFilled></RxSewingPinFilled>              
                   <p>
                     Peterson Building
                   </p>
@@ -220,42 +296,43 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="flex-grow flex items-center justify-center text-lg font-bold border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-800 duration-500">
+            <div className="flex-grow flex items-center justify-center text-lg font-bold border-[1px] p-4 rounded-lg hover:scale-[1.025] hover:bg-slate-800 duration-500">
               All Majors and Classifications welcome
             </div>
-
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                <div className="flex-grow flex items-center justify-center h-full border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-600 duration-500">
-                  <div className="flex flex-col gap-2">
-                    <p className="text-4xl font-bold">
-                      $2000+ in Prizes
-                    </p>
-                    <p className="text-md">
-                      also free food, glory, and chance to compete at ICPC World Finals
-                    </p>
+            <div className="flex flex-col sm:flex-row flex-grow gap-4">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                  <div className="flex-grow flex items-center justify-center h-full border-[1px] p-4 rounded-lg hover:scale-[1.025] hover:bg-slate-600 duration-500">
+                    <div className="flex flex-col gap-2">
+                      <p className="text-4xl font-bold">
+                        $2000+ in Prizes
+                      </p>
+                      <p className="text-md">
+                        also free food, glory, and chance to compete at ICPC World Finals
+                      </p>
+                    </div>
                   </div>
-                </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <a href="/#schedule">See Prizes</a>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-                 
-            <div className="flex-grow border-[1px] p-4 rounded-lg hover:bg-slate-700 duration-500">
-              <p className="text-lg font-bold mb-8">C++, Java, Python, and more allowed</p>
-              <Allowed items={allowedLanguages} 
-                notAllowed="None of these???" 
-                allowedMessage="Yes it is! You can use it at the contest." 
-                notAllowedMessage="Bruh just pick a different one."
-                buttonName="See if your language is allowed!"
-                panelPosition="Choose a Language"
-              ></Allowed>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <a href="/#schedule">See Prizes</a>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <div className="flex-grow border-[1px] p-4 rounded-lg hover:bg-slate-700 duration-500">
+                <p className="text-lg font-bold mb-8">C++, Java, Python, and more allowed</p>
+                <Allowed items={allowedLanguages} 
+                  notAllowed="None of these???" 
+                  allowedMessage="Yes it is! You can use it at the contest." 
+                  notAllowedMessage="Bruh just pick a different one."
+                  buttonName="See if your language is allowed!"
+                  panelPosition="Choose a Language"
+                ></Allowed>
+              </div>
             </div>
+            
             <div className="flex gap-4">
-              <div className="border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-800 duration-500">
+              <div className="border-[1px] p-4 rounded-lg hover:scale-[1.025] hover:bg-slate-800 duration-500">
                 <p className="text-2xl font-bold">
                   Teams of 3
                 </p>
@@ -266,7 +343,7 @@ export default function Home() {
                   Collaboration only allowed among your teammates.
                 </p>
               </div>
-              <div className=" border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-600 duration-500">
+              <div className=" border-[1px] p-4 rounded-lg hover:scale-[1.025] hover:bg-slate-600 duration-500">
                 <p className="text-4xl font-bold">
                   Internet Allowed??
                 </p>
@@ -275,7 +352,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center justify-center text-md border-[1px] p-4 rounded-lg hover:scale-[1.05] hover:bg-slate-600 duration-500">
+            <div className="flex items-center justify-center text-md border-[1px] p-4 rounded-lg hover:scale-[1.025] hover:bg-slate-600 duration-500">
               <div className="flex gap-4">
                 <p className="text-xl font-bold">
                   Only basic knowledge of programming is required
@@ -296,16 +373,23 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
+        <div className="flex items-center gap-4 mt-8">
+          <p>
+            See more details:
+          </p>
+          <a href="/specifics" className="p-2 border-2 border-slate-500 bg-slate-900 hover:bg-slate-800 rounded-lg">
+            Contest Specifics    
+          </a>
+        </div>
       </div>
       <div className="w-full">
         <h2 id="schedule" className="text-4xl font-bold uppercase" style={ rowdies.style } px-8>
           Schedule
         </h2>
-        <div>
+        <div className="mt-4">
           {
             schedule.map((event, index) => (
-              <div key={index} className="flex items-center justify-between border-gray-700 border-[1px] rounded-lg p-4 my-4 hover:bg-black duration-500">
+              <div key={"event" + index} className="flex items-center justify-between border-gray-700 border-b-[1px] p-4 hover:bg-slate-800 rounded-lg duration-500">
                 <p className="text-xl font-bold">{event.time}</p>
                 <p className="text-lg">{event.event}</p>
               </div>
@@ -317,8 +401,27 @@ export default function Home() {
         <h2 className="text-4xl font-bold uppercase" style={ rowdies.style }>
           Prizes
         </h2>
+        <p className="my-4">
+          Enough prizes for every member of the team, totalling over $2000 in value!
+        </p>
         <div>
-          {}
+          <h3 className="text-2xl font-bold uppercase" style={ rowdies.style }>
+            Main Prizes (Top 3)
+          </h3>
+          <p>
+
+          </p>
+          <div className="flex flex-col gap-4">
+            <h4>Prize Pool</h4>
+            <div className="flex gap-4">
+              {mainPrizes.map((prize, index) => (
+                <PrizeItem key={"prize" + index} item={prize.item} description={prize.description} pic={prize.pic}></PrizeItem>
+              ))}
+            </div>
+          </div>
+          <div className="flex">
+
+          </div>
         </div>
       </div>
       <div className="w-full p-8">
@@ -330,7 +433,7 @@ export default function Home() {
             <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                <a href={sponsor.link} key={index} className="flex items-center gap-4 hover:scale-[1.1] duration-200">
+                <a href={sponsor.link} key={"sponsor" + index} className="flex items-center gap-4 hover:scale-[1.1] duration-200">
                   <Image src={sponsor.logo} alt={sponsor.name} width={100} height={100}></Image>
                 </a>
               </TooltipTrigger>

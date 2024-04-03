@@ -5,23 +5,23 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 // icons
-import { GlobeIcon, InstagramLogoIcon, DiscordLogoIcon, HeartIcon } from '@radix-ui/react-icons'
+import { RxGlobe, RxInstagramLogo, RxDiscordLogo, RxHeart } from "react-icons/rx";
 
 // socials
 const socials = [
   {
     name: "Website",
-    icon: <GlobeIcon></GlobeIcon>,
+    icon: <RxGlobe></RxGlobe>,
     link: "https://acpc.io"
   },
   {
     name: "Instagram",
-    icon: <InstagramLogoIcon></InstagramLogoIcon>,
+    icon: <RxInstagramLogo></RxInstagramLogo>,
     link: "https://www.instagram.com/acpc.io/"
   },
   {
     name: "Discord",
-    icon: <DiscordLogoIcon></DiscordLogoIcon>,
+    icon: <RxDiscordLogo></RxDiscordLogo>,
     link: "https://discord.gg/4fX3Xj9"
   }
 ]
@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="flex flex-col gap-8">
                 <div className="flex items-center gap-2">
                     <p className="text-white">Made with</p>
-                    <HeartIcon className=""></HeartIcon>
+                    <RxHeart className=""></RxHeart>
                     <p>by the 2024 ACPC Officers</p>
                 </div>
                 <Image src="/acpc-logo.svg" alt="" width={100} height={100}></Image>

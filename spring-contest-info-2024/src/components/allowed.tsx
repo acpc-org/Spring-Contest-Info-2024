@@ -47,7 +47,7 @@ function IsAllowed(params: isAllowedProps) {
                     {params.chosen}
                 </div>
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-2 items-center border-[1px] mt-1 p-2 rounded-lg">
                 <LuPartyPopper></LuPartyPopper>
                 <p>{params.message}</p>
             </div>
@@ -64,7 +64,7 @@ function IsNotAllowed(params: isAllowedProps) {
                     {params.chosen}
                 </div>
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-2 items-center border-[1px] mt-1 p-2 rounded-lg">
                 <IoSadOutline></IoSadOutline>
                 <p>{params.message}</p>
             </div>

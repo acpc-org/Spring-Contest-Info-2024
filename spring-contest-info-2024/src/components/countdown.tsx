@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip"
 
 // icons
-import { LapTimerIcon } from '@radix-ui/react-icons'
+import { RxLapTimer } from "react-icons/rx";
 
 
 export default function Countdown() {
@@ -53,7 +53,7 @@ export default function Countdown() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
-              <h4 className='flex items-center gap-1'><LapTimerIcon></LapTimerIcon>{formattedCountDown}</h4>
+              <h4 className='flex items-center gap-1'><RxLapTimer></RxLapTimer>{formattedCountDown}</h4>
             </TooltipTrigger>
             <TooltipContent>
               <h3>Deadline to Apply: {endDate.toLocaleDateString("en-US")}</h3>

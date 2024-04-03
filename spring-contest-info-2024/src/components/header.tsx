@@ -6,7 +6,7 @@ import Link from "next/link"
 import Countdown from "./countdown"
 
 // icons
-import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { RxHamburgerMenu } from "react-icons/rx";
 
 
 import { cn } from "@/lib/utils"
@@ -26,7 +26,7 @@ const components: { title: string; href: string; description: string }[] = [
     title: "Tips",
     href: "/tips",
     description:
-      "Look this if you're struggling during the contest",
+      "Look this if you're struggling during the contest.",
   },
   {
     title: "FAQ",
@@ -35,27 +35,27 @@ const components: { title: string; href: string; description: string }[] = [
       "Frequently Asked Questions.",
   },
   {
-    title: "Sponsors",
-    href: "/#sponsors",
-    description:
-      "Yay thank you for the money.",
+    title: "Practice Problem",
+    href: "/practice",
+    description: "A taste of the contest.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Contest Specifics",
+    href: "/specifics",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Details about the contest, like the rules and the format.",
   },
   {
     title: "Tooltip",
     href: "/docs/primitives/tooltip",
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
+  {
+    title: "Sponsors",
+    href: "/#sponsors",
+    description:
+      "Yay thank you for the money.",
   },
 ]
 
@@ -78,7 +78,7 @@ function DropDownMenu() {
                           Apply Now
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
-                          Trouble is brewing...
+                          Deadline is April 13th at 11:59 PM
                         </p>
                     </a>
                     </NavigationMenuLink>
@@ -120,7 +120,7 @@ export default function Header() {
   return (
     <header className="w-full flex items-center justify-between fixed z-10 bg-[rgba(0,0,0,0.5)] backdrop-blur-lg p-4 border-b-[1px] border-slate-500">
         <div className="sm:hidden group hover:cursor-pointer hover:bg-slate-900 p-3 rounded-lg ">
-          <HamburgerMenuIcon></HamburgerMenuIcon>
+          <RxHamburgerMenu></RxHamburgerMenu>
           <div className="hidden sm:block group-hover:block group-hover:absolute group-hover:top-4 group-hover:left-2 bg-slate-950 rounded-lg">
             <DropDownMenu></DropDownMenu>
           </div>
