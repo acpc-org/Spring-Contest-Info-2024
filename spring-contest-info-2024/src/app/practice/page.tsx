@@ -20,7 +20,7 @@ export default function Practice() {
             <div className="flex flex-col gap-2">
               <h3 className="text-xl font-bold">Problem</h3>
               <p>
-                After everyone hyped up Friday the 13th, Mark couldn't wait to celebrate it and made plans to celebrate it this November! However, he made a fatal flaw: as it turns out, he got the date off by one and is now celebrating Saturday the 13th.
+                After everyone hyped up Friday the 13th, Mark couldn&apos;t wait to celebrate it and made plans to celebrate it this November! However, he made a fatal flaw: as it turns out, he got the date off by one and is now celebrating Saturday the 13th.
               </p>
               <p>
                 Given that Mark had already made plans to celebrate and the fact that he is a victim of the sunk-cost fallacy, Mark decided to go through with the party anyway and wants to make his final preparations.
