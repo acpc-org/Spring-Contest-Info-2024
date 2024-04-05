@@ -46,12 +46,6 @@ const components: { title: string; href: string; description: string }[] = [
       "Details about the contest, like the rules and the format.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-  {
     title: "Sponsors",
     href: "/#sponsors",
     description:
