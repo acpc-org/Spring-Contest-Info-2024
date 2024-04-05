@@ -165,27 +165,27 @@ const mysteryPrizes = [
   { 
     item: "???",
     description: "?????", 
-    pic: "/unknown_prize.png",
+    pic: "/unknown.png",
   },
   { 
     item: "???",
     description: "?????", 
-    pic: "/unknown_prize.png",
+    pic: "/unknown.png",
   },
   { 
     item: "???",
     description: "?????", 
-    pic: "/unknown_prize.png",
+    pic: "/unknown.png",
   },
   { 
     item: "???",
     description: "?????", 
-    pic: "/unknown_prize.png",
+    pic: "/unknown.png",
   },
   { 
     item: "???",
     description: "?????", 
-    pic: "/unknown_prize.png",
+    pic: "/unknown.png",
   },
 ]
 
@@ -402,27 +402,101 @@ export default function Home() {
           Prizes
         </h2>
         <p className="my-4">
-          Enough prizes for every member of the team, totalling over $2000 in value!
+          Enough prizes for every member of the team, totalling over $2000 in value! 
+          However, due to legal / organizational requirements, only Texas A&M teams can receive prizes.
         </p>
-        <div>
+        <div className="mb-8">
           <h3 className="text-2xl font-bold uppercase" style={ rowdies.style }>
             Main Prizes (Top 3)
           </h3>
-          <p>
-
-          </p>
-          <div className="flex flex-col gap-4">
-            <h4>Prize Pool</h4>
-            <div className="flex gap-4">
-              {mainPrizes.map((prize, index) => (
-                <PrizeItem key={"prize" + index} item={prize.item} description={prize.description} pic={prize.pic}></PrizeItem>
-              ))}
+          <div className="flex flex-col lg:flex-row gap-4 mt-2">
+            <div className="bg-slate-900 border-2 rounded-lg px-4 pb-4 pt-2 flex-grow">
+              <h4 className="mb-2">Prize Pool</h4>
+              <div className="flex gap-4 flex-wrap justify-between">
+                {mainPrizes.map((prize, index) => (
+                  <PrizeItem key={"prize" + index} item={prize.item} description={prize.description} pic={"/prizes" + prize.pic}></PrizeItem>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mb-2">Prizes</h4>
+              <div className="flex flex-col rounded-lg border-2 p-4">
+                {['1st', '2nd', '3rd'].map((place, index) => (
+                  <div key={"place" + index} className="border-b-2 pb-1 mb-2 group hover:border-slate-500 duration-200">
+                    <h5 className="text-lg font-bold">{place} Place</h5>
+                    <div className="text-md text-slate-400 group-hover:text-slate-300 duration-200">
+                      <p>{place} choice from the Main Prize pool.</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="flex">
-
+        </div>
+        
+        <div className="mb-8">
+          <h3 className="text-2xl font-bold uppercase" style={ rowdies.style }>
+            Classification Prizes 
+          </h3>
+          <div className="flex flex-col lg:flex-row gap-4 mt-2">
+            <div className="bg-slate-900 border-2 rounded-lg px-4 pb-4 pt-2 flex-grow">
+              <h4 className="mb-2">Prize Pool</h4>
+              <div className="flex gap-4 flex-wrap justify-between">
+                {classificationPrizes.map((prize, index) => (
+                  <PrizeItem key={"prize" + index} item={prize.item} description={prize.description} pic={"/prizes" + prize.pic}></PrizeItem>
+                ))}
+              </div>
+            </div>
+            <div className="lg:w-[30vw]">
+              <h4 className="text-lg font-bold mb-2 ">Prizes</h4>
+              <div className="flex flex-col rounded-lg border-2 p-4">
+                {['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate'].map((place, index) => (
+                  <div key={"place" + index} className="border-b-2 pb-1 mb-2 group hover:border-slate-500 duration-200">
+                    <h5 className="text-lg font-bold">{place} Category</h5>
+                  </div>
+                ))}
+                <div className="mt-2 text-sm text-slate-400 group-hover:text-slate-300 duration-200">
+                  <h4 className="font-bold">Notes:</h4>
+                  <ul className="ml-4 list-disc">
+                    <li>Classifications with a higher score gets preferred choice from the Clasfification Prize Pool.</li>
+                    <li>Teams that win a main prize cannot also win a class year prize.</li>
+                    <li>Class year is determined by the member of your team with the highest class year.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div className="mb-8">
+          <h3 className="text-2xl font-bold uppercase" style={ rowdies.style }>
+            Special / "Creative" Prizes (Top 3)
+          </h3>
+          <div className="flex flex-col lg:flex-row gap-4 mt-2">
+            <div className="bg-slate-900 border-2 rounded-lg px-4 pb-4 pt-2 flex-grow">
+              <h4 className="mb-2">Prize Pool</h4>
+              <div className="flex gap-4 flex-wrap justify-between">
+                {mysteryPrizes.map((prize, index) => (
+                  <PrizeItem key={"prize" + index} item={prize.item} description={prize.description} pic={"/prizes" + prize.pic}></PrizeItem>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mb-2">Prizes</h4>
+              <div className="flex flex-col rounded-lg border-2 p-4">
+                {['First to Solve Problem A', '???', '???', '???', '???'].map((place, index) => (
+                  <div key={"place" + index} className="border-b-2 pb-1 mb-2 group hover:border-slate-500 duration-200">
+                    <h5 className="text-lg font-bold">{place} Place</h5>
+                    <div className="text-md text-slate-400 group-hover:text-slate-300 duration-200">
+                      <p>Choice from the Special/"Creative" Prize pool.</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div className="w-full p-8">
         <h2 id="sponsors" className="text-4xl font-bold uppercase" style={ rowdies.style }>
@@ -445,14 +519,14 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div id="faq" className="w-full p-8">
+      {/* <div id="faq" className="w-full p-8">
         <h2 className="text-4xl font-bold uppercase" style={ rowdies.style }>
           FAQ
         </h2>
         <div>
           {}
         </div>
-      </div>
+      </div> */}
       <Footer></Footer>
     </main>
   );
