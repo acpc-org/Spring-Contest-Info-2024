@@ -470,7 +470,7 @@ export default function Home() {
 
         <div className="mb-8">
           <h3 className="text-2xl font-bold uppercase" style={ rowdies.style }>
-            Special / "Creative" Prizes (Top 3)
+            Special / &quot;Creative&quot; Prizes (Top 3)
           </h3>
           <div className="flex flex-col lg:flex-row gap-4 mt-2">
             <div className="bg-slate-900 border-2 rounded-lg px-4 pb-4 pt-2 flex-grow">
@@ -488,7 +488,7 @@ export default function Home() {
                   <div key={"place" + index} className="border-b-2 pb-1 mb-2 group hover:border-slate-500 duration-200">
                     <h5 className="text-lg font-bold">{place} Place</h5>
                     <div className="text-md text-slate-400 group-hover:text-slate-300 duration-200">
-                      <p>Choice from the Special/"Creative" Prize pool.</p>
+                      <p>Choice from the Special/&quot;Creative&quot; Prize pool.</p>
                     </div>
                   </div>
                 ))}
