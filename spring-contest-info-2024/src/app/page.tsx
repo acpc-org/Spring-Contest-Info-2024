@@ -117,9 +117,9 @@ const allowedLanguages = [
 
 const mainPrizes = [
   { 
-    item: "Airpods Pro",
-    description: "Apple AirPods Pro (2nd Generation) Wireless Ear Buds with USB-C Charging, Up to 2X More Active Noise Cancelling Bluetooth Headphones, Transparency Mode, Adaptive Audio, with Personalized Spatial Audio.",
-    pic: "/airpods_pro.png",
+    item: "Switch Lite",
+    description: "The Nintendo Switch Lite is a compact alternative to the standard Nintendo Switch, making it a perfect travel companion for any gamer on the go.",
+    pic: "/switch_lite.png",
   },
   {
     item: "Razer Gaming Keyboard",
@@ -234,10 +234,7 @@ export default function Home() {
         </p>
         <p className="mb-8">
           Compete for the chance to win prizes, enjoy free food, have fun with
-          friends, and qualify for 
-          the <a href="https://icpc.global/" target="_blank" rel="noopener noreferrer" className="underline decoration-dashed hover:decoration-solid">
-            ACM ICPC World Finals
-          </a>!
+          friends!
         </p>
         <a className="glow py-2 px-4 rounded-lg hover:bg-[rgba(44,53,76,0.5)]" href="/apply">
           Apply Now
@@ -309,7 +306,7 @@ export default function Home() {
                         $2000+ in Prizes
                       </p>
                       <p className="text-md">
-                        also free food, glory, and chance to compete at ICPC World Finals
+                        also free food and glory.
                       </p>
                     </div>
                   </div>
@@ -486,7 +483,7 @@ export default function Home() {
               <div className="flex flex-col rounded-lg border-2 p-4">
                 {['First to Solve Problem A', '???', '???', '???', '???'].map((place, index) => (
                   <div key={"place" + index} className="border-b-2 pb-1 mb-2 group hover:border-slate-500 duration-200">
-                    <h5 className="text-lg font-bold">{place} Place</h5>
+                    <h5 className="text-lg font-bold">{place}</h5>
                     <div className="text-md text-slate-400 group-hover:text-slate-300 duration-200">
                       <p>Choice from the Special/&quot;Creative&quot; Prize pool.</p>
                     </div>
