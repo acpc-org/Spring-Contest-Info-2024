@@ -15,7 +15,7 @@ import { RxLapTimer } from "react-icons/rx";
 
 export default function Countdown() {
   const now = new Date();
-  const endDate = new Date(2024,3,13);
+  const endDate = new Date("April 14, 2024 18:00:00"); // 18 = 6pm GMT = 1pm CDT
 
   const [countdown, setCountdown] = useState('');
   const [formattedCountDown, setFormattedCountDown] = useState('');
@@ -56,9 +56,9 @@ export default function Countdown() {
               <h4 className='flex items-center gap-1'><RxLapTimer></RxLapTimer>{formattedCountDown}</h4>
             </TooltipTrigger>
             <TooltipContent>
-              <h3>Deadline to Apply: {endDate.toLocaleDateString("en-US")}</h3>
+              <h3>Time until Contest: {endDate.toLocaleDateString("en-US")}</h3>
               {!countdownEnded && <h4>{countdown} remaining</h4>}
-              {countdownEnded && <h4>Deadline Passed!</h4>}
+              {countdownEnded && <h4>Contest has/is occured/ing!</h4>}
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

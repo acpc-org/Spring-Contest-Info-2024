@@ -60,6 +60,11 @@ const sponsors = [
     logo: "/chevron.png",
     link: "https://www.chevron.com/"
   },
+  {
+    name: "Texas A&M Good Bull Fund",
+    logo: "/goodbull.png",
+    link: "https://getinvolved.tamu.edu/org/goodbull/positions/483"
+  },
 ]
 
 const allowedLanguages = [
@@ -236,8 +241,8 @@ export default function Home() {
           Compete for the chance to win prizes, enjoy free food, have fun with
           friends!
         </p>
-        <a className="glow py-2 px-4 rounded-lg hover:bg-[rgba(44,53,76,0.5)]" href="/apply">
-          Apply Now
+        <a className="glow py-2 px-4 rounded-lg hover:bg-[rgba(44,53,76,0.5)]" href="/signup">
+          Sign Up Now
         </a>
       </div>
       <div className="w-full p-8">
@@ -505,7 +510,7 @@ export default function Home() {
             <Tooltip>
               <TooltipTrigger>
                 <a href={sponsor.link} className="flex items-center gap-4 hover:scale-[1.1] duration-200">
-                  <Image src={sponsor.logo} alt={sponsor.name} width={100} height={100}></Image>
+                  <Image src={"/sponsors" + sponsor.logo} alt={sponsor.name} width={100} height={100}></Image>
                 </a>
               </TooltipTrigger>
               <TooltipContent>

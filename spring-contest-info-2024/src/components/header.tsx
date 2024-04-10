@@ -1,5 +1,6 @@
 "use client"
  
+import Image from "next/image";
 import * as React from "react"
 import Link from "next/link"
  
@@ -28,12 +29,12 @@ const components: { title: string; href: string; description: string }[] = [
     description:
       "Look this if you're struggling during the contest.",
   },
-  {
-    title: "FAQ",
-    href: "/#faq",
-    description:
-      "Frequently Asked Questions.",
-  },
+  // {
+  //   title: "FAQ",
+  //   href: "/#faq",
+  //   description:
+  //     "Frequently Asked Questions.",
+  // },
   {
     title: "Practice Problem",
     href: "/practice",
@@ -65,11 +66,11 @@ function DropDownMenu() {
                     <NavigationMenuLink asChild>
                     <a
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                        href="/apply"
+                        href="/signup"
                     >
                         <Icons.logo className="h-6 w-6" />
                         <div className="mb-2 mt-4 text-lg font-medium">
-                          Apply Now
+                          Sign Up Now
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
                           Deadline is April 13th at 11:59 PM
@@ -77,6 +78,11 @@ function DropDownMenu() {
                     </a>
                     </NavigationMenuLink>
                 </li>
+                <div className="sm:hidden">
+                  <ListItem href="/#" title="Home">
+                    Bring it to the top
+                  </ListItem>
+                </div>
                 <ListItem href="/#overview" title="Overview">
                   Details about the event
                 </ListItem>
@@ -119,13 +125,23 @@ export default function Header() {
             <DropDownMenu></DropDownMenu>
           </div>
         </div>
-        <div className="hidden sm:block">
+        <div className="hidden sm:flex items-center gap-2">
+          <a href="/#" className="">
+            <Image
+              src="/acpc-logo.svg"
+              alt=""
+              width={35}
+              height={35}
+            >  
+            </Image>
+          </a>
+          
           <DropDownMenu></DropDownMenu>
         </div>
         <div className="flex items-center gap-4">
           <Countdown></Countdown>
-          <a className="glow py-2 px-4 rounded-lg hover:bg-[rgba(44,53,76,0.5)]" href="/apply">
-            Apply
+          <a className="glow py-2 px-4 rounded-lg hover:bg-[rgba(44,53,76,0.5)]" href="/signup">
+            Sign Up
           </a>
         </div>
     </header>

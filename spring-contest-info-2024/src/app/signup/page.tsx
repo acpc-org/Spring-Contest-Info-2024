@@ -6,12 +6,12 @@ import Header from '../../components/header'
 // fonts
 import { rowdies } from "../fonts";
 
-export default function Apply() {
+export default function SignUp() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between px-8 sm:px-24">
         <Header></Header>
         <div className="flex flex-col gap-8 my-28">
-            <h1 className="text-6xl font-bold uppercase " style={ rowdies.style }>Apply</h1>
+            <h1 className="text-6xl font-bold uppercase " style={ rowdies.style }>Sign Up</h1>
             <ol className="list-decimal">
                 <li className="mb-8">
                     <h2 className="text-lg font-bold uppercase">Make a Codeforces Account</h2>
@@ -63,7 +63,7 @@ export default function Apply() {
                 <li className="mb-8">
                     <h2 className="text-lg font-bold uppercase">Get Hyped</h2>
                     <p>
-                        Wooh! Congrats on applying for the contest! You can get ready by 
+                        Wooh! Congrats on signing up for the contest! You can get ready by 
                         practicing with your team on Codeforces or any other 
                         competitive coding platform, attending our meetings,
                         and checking up our socials in the meantime.

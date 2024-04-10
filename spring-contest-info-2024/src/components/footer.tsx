@@ -12,17 +12,17 @@ const socials = [
   {
     name: "Website",
     icon: <RxGlobe></RxGlobe>,
-    link: "https://acpc.io"
+    link: "https://tamuacpc.com/"
   },
   {
     name: "Instagram",
     icon: <RxInstagramLogo></RxInstagramLogo>,
-    link: "https://www.instagram.com/acpc.io/"
+    link: "https://www.instagram.com/aggiecompetitiveprogramming/"
   },
   {
     name: "Discord",
     icon: <RxDiscordLogo></RxDiscordLogo>,
-    link: "https://discord.gg/4fX3Xj9"
+    link: "https://tx.ag/acpcdc"
   }
 ]
 
